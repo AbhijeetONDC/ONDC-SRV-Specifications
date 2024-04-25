@@ -1,5 +1,5 @@
-summary: Health Care Services
-description: The following is an illustrative flow to perform a transaction of a nature where a buyer would like to request for health care services. The booking majorly happens in four phases of order processing flow, i.e. Discovery of available services and service providers based on serviceability, order, fulfillment and post-fulfillment.
+summary: Health Care Services Sample Recollection
+description: The following is an illustrative flow to perform a transaction of a nature where a buyer would like to request for health care services. The booking majorly happens in four phases of order processing flow, i.e. Discovery of available services and service providers based on serviceability, order, fulfillment and post-fulfillment. In this flow, sample recollection is done.
 details:
   - description: Sequence Diagram for Booking Health Care Services
     mermaidGraph: >-
@@ -135,28 +135,14 @@ steps:
     reference: if any
     example:
       $ref: "../../Examples/Health_care_services_yaml/on_status/on_status_collected_by_agent.yaml"
-  - summary: Seller app sends order status (Received at lab)
-    api: on_status (Received At Lab)
-    description: Seller app sends the order status update when the sample has been received at the lab
-    reference: if any
+  - summary: Buyer requests for the scheduling sample recollection
+    api: update
+    description: Buyer requests for the scheduling sample recollection
     example:
-      $ref: "../../Examples/Health_care_services_yaml/on_status/on_status_received_at_lab.yaml"
-  - summary: Seller app sends order status (Test completed)
-    api: on_status (Test Completed)
-    description: Seller app sends the order status update when the test has been completed at the lab
-    reference: if any
+      $ref: "../../Examples/Health_care_services_yaml/update/update.yaml"
+  - summary: Seller confirms the updated sample recollection schedule
+    api: on_update
+    description: Seller confirms the updated sample recollection schedule
     example:
-      $ref: "../../Examples/Health_care_services_yaml/on_status/on_status_test_completed.yaml"
-  - summary: Seller app sends the order status(Report generated)
-    api: on_status (Report Generated)
-    description: Seller app sends the order status update when the test report is generated
-    reference: if any
-    example:
-      $ref: "../../Examples/Health_care_services_yaml/on_status/on_status_report_generated.yaml"
-  - summary: Seller app sends the order status (Report Shared)
-    api: on_status (Report Shared)
-    description: Seller app sends the order status update when the test report is shared
-    reference: if any
-    example:
-      $ref: "../../Examples/Health_care_services_yaml/on_status/on_status_report_shared.yaml"
+      $ref: "../../Examples/Health_care_services_yaml/on_update/on_update.yaml"
 
